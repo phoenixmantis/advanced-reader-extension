@@ -1,0 +1,154 @@
+<!-- popup.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Advanced Reader View</title>
+  <style>
+    body {
+      width: 300px;
+      padding: 15px;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .control-group {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    label {
+      font-weight: 500;
+    }
+    select, input {
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .theme-buttons {
+      display: flex;
+      gap: 10px;
+    }
+    button {
+      padding: 8px 12px;
+      border: none;
+      border-radius: 4px;
+      background: #4a90e2;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #357abd;
+    }
+    .refresh-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      margin-top: 10px;
+      background: #2ecc71;
+    }
+    .refresh-button:hover {
+      background: #27ae60;
+    }
+    /* Switch styles */
+    .switch-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 24px;
+    }
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: .4s;
+      border-radius: 24px;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 16px;
+      width: 16px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
+    input:checked + .slider {
+      background-color: #4a90e2;
+    }
+    input:checked + .slider:before {
+      transform: translateX(26px);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="switch-container">
+      <label for="readerMode">Reader Mode</label>
+      <label class="switch">
+        <input type="checkbox" id="readerMode">
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div class="control-group">
+      <label for="fontSize">Font Size</label>
+      <input type="range" id="fontSize" min="12" max="24" step="1">
+    </div>
+
+    <div class="control-group">
+      <label for="fontFamily">Font Family</label>
+      <select id="fontFamily">
+        <option value="Georgia, serif">Georgia</option>
+        <option value="Arial, sans-serif">Arial</option>
+        <option value="'Times New Roman', serif">Times New Roman</option>
+        <option value="'Open Sans', sans-serif">Open Sans</option>
+      </select>
+    </div>
+
+    <div class="control-group">
+      <label for="lineHeight">Line Height</label>
+      <input type="range" id="lineHeight" min="1" max="2" step="0.1">
+    </div>
+
+    <div class="control-group">
+      <label>Theme</label>
+      <div class="theme-buttons">
+        <button id="lightTheme">Light</button>
+        <button id="sepiaTheme">Sepia</button>
+        <button id="darkTheme">Dark</button>
+      </div>
+    </div>
+
+    <button id="refreshView" class="refresh-button">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M23 4v6h-6M1 20v-6h6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Refresh View
+    </button>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
