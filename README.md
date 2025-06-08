@@ -126,3 +126,11 @@ If you encounter any issues or have suggestions, please:
   - Customizable reading settings
   - Theme support
   - Real-time settings updates 
+
+## Disclaimer
+
+This Chrome extension (Advanced Reader View) is developed to enhance the reading experience by removing distracting elements from web pages. The project is open-source and non-commercial, with no intention of generating profit.
+
+Use of this extension is entirely at the user's own risk. The developers shall not be held liable for any potential issues, including but not limited to data loss, security vulnerabilities, browser incompatibilities, or any technical problems arising from the use or misuse of the extension. The extension is provided “as is,” without any express or implied warranty.
+
+If you encounter any problems or bugs, please report them via the [GitHub Issues page](https://github.com/phoenixmantis/advanced-reader-extension/issues).
